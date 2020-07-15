@@ -55,5 +55,15 @@ module.exports ={
             template:'./src/copy.html',   //将index.html的内容复制到HTMl里
         })
     ],
-    mode:'development'
+    mode:'development',
+
+    //devserver开发服务器，自动编译，自动打开浏览器，自动刷新
+    //只会在内存中=编译打包，不会有任何输出
+    //安装 webpack-dev-server  如果安装到本项目，就使用npx webpack-dev-server 。全局安装直接webpack-dev-server
+    devServer:{
+        contentBase:path.resolve(__dirname,'build'),
+        compress:true,
+        port:3654,
+        open:true
+    }
 }
